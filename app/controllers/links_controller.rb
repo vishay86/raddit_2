@@ -1,6 +1,7 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update , :destroy]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /links
   # GET /links.json
@@ -72,4 +73,6 @@ class LinksController < ApplicationController
     def link_params
       params.require(:link).permit(:title, :url)
     end
+
+
 end
