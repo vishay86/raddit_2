@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Raddit2</title>
+  <title>Raddit</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,11 +10,15 @@
 
 <%= render 'layouts/header' %>
 
-<% flash.each do |name, msg| %>
-<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-<% end %>
+	<div id="main_content" class="container">
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-info") %>
+		<% end %>
 
-<%= yield %>
-
+			<div id="content" class="col-md-9 center-block">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
